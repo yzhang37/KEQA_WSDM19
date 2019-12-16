@@ -5,12 +5,12 @@ set -o errexit
 # the files should exist at .downloads/
 
 # check if SimpleQuestions dataset exist.
-if [ ! -f "./downloads/data.zip" ]; then
+if [ ! -f ".downloads/data.zip" ]; then
     echo "Please download SimpleQuestions data, and put data.zip inside .downloads/."
     exit 1
 fi
 # check if KGembed.zip exist.
-if [ ! -f "./downloads/KGembed.zip" ]; then
+if [ ! -f ".downloads/KGembed.zip" ]; then
     echo "Please download Knowledge Graph Embedding data, and put KGembed.zip inside .downloads/."
     exit 1
 fi
@@ -19,7 +19,7 @@ if [ -d "./data" ]; then
     echo "Existing ./data, unzip will pass."
     echo ""
 else
-    unzip ./downloads/data.zip -d .
+    unzip .downloads/data.zip -d .
 fi
 
 echo "Preprocess the raw data"
@@ -34,7 +34,7 @@ if [ -d "./KGembed" ]; then
     echo "Existing ./KGembed, unzip will pass."
     echo ""
 else
-    unzip ./downloads/KGembed.zip -d .
+    unzip .downloads/KGembed.zip -d .
     mv -f KGembed/* preprocess/
 fi
 
