@@ -3,3 +3,6 @@ data.zip
 data/
 preprocess/
 .idea/
+
+# added for offline mode by X230
+.downloads/
